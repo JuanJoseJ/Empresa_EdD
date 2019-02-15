@@ -4,7 +4,7 @@ public class Metal extends Pieza{
 	
 	
 	public Metal(double peso, String codigo){
-		super(peso, cantidad,codigo);
+		super(peso,codigo);
 	}
 
 	@Override
