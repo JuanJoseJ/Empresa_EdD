@@ -6,10 +6,8 @@ public class Plastico extends Pieza{
 		super(peso,codigo);
 	}
 
-	@Override
 	public double costo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1.3*this.peso+30;
 	}
 
 	

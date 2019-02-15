@@ -9,8 +9,7 @@ public class Metal extends Pieza{
 
 	@Override
 	public double costo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2.8*this.peso+56;
 	}
 	
 }
