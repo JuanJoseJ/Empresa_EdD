@@ -7,11 +7,12 @@ public class Mixta extends Pieza{
 		super(peso,codigo);
 	
 	}
-	@Override
-	public double costo() {
-		// TODO Auto-generated method stub
+	public void costo() {
 		return 0;
 	}
 
+	public double getCosto(){
+		return this.costo;
+	}
 	
 }
