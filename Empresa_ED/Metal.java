@@ -7,8 +7,8 @@ public class Metal extends Pieza{
 		super(peso,codigo);
 	}
 
-	public void costo() {
-		this.costo= 2.8*this.peso+56;
+	public double costo() {
+		return 2.8*this.peso+56;
 	}
 
 	public double getCosto(){
