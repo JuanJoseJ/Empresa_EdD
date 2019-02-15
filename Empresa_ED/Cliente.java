@@ -13,13 +13,21 @@ public class CLiente{
 		this.codigo=codigo;
 	}
 
+	public  String getCodigo(){
+		return this.codigo;
+	}
+
+	public Solicitud getSolicitudes(){
+		return this.solicitudes;
+	}
+
 	public void Crear_Solicitud(){
 
 	}
 
-	public int Costo_Solicitud(){
+	public double Costo_Solicitud(){
 
 	}
 
-	
+
 }
