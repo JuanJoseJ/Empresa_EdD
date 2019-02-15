@@ -24,4 +24,8 @@ public class Empresa {
 	public void Fabricar_Pieza(){
 
 	}
+	
+	public double metodoPrueba() {
+		return 0;
+	}
 }
