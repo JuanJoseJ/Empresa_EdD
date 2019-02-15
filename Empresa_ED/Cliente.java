@@ -1,6 +1,6 @@
 package Empresa_ED;
 
-public class CLiente{
+public class Cliente{
 	private String codigo;
 	private String nombre;
 	private String direccion;
@@ -9,16 +9,20 @@ public class CLiente{
 	private boolean Estado_VIP;
 	private Solicitud[] solicitudes;
 
-	public CLiente(String codigo){
+	public Cliente(String codigo){
 		this.codigo=codigo;
 	}
 
 	public  String getCodigo(){
 		return this.codigo;
 	}
+	
+	public Solicitud[] getSolicitudes() {
+		return solicitudes;
+	}
 
-	public Solicitud getSolicitudes(){
-		return this.solicitudes;
+	public void setSolicitudes(Solicitud[] solicitudes) {
+		this.solicitudes = solicitudes;
 	}
 
 	public void Crear_Solicitud(){
@@ -26,6 +30,7 @@ public class CLiente{
 	}
 
 	public double Costo_Solicitud(){
+		return 0;
 
 	}
 

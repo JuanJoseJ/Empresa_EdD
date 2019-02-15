@@ -13,6 +13,7 @@ public class Empresa {
 	}
 
 	public int Costo_Total(){
+		return 0;
 
 	}
 
