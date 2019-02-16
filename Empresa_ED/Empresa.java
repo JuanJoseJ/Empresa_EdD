@@ -10,6 +10,9 @@ public class Empresa {
 	public Empresa(String nombre, String direccion){
 		this.nombre=nombre;
 		this.direccion=direccion;
+		piezas= new Pieza[0];
+		clientes= new Cliente[0];
+		solicitudes= new Solicitud[0];
 	}
 
 	public int Costo_Total(){
