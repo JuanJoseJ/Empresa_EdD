@@ -5,11 +5,6 @@ public class Mixta extends Pieza{
 	
 	public Mixta(double peso, String codigo, Pieza piezas[]){
 		super(peso,codigo);
-		/*double acum=0; sumatoria del precio de la pieza
-		for(int i=0; i<piezas.length;i++) {
-			acum+= piezas[i].getPeso();
-		}
-		this.peso=acum;*/
 		this.piezas=piezas;
 	}
 	public double costo() {  
@@ -19,7 +14,13 @@ public class Mixta extends Pieza{
 		}
 		return costofinal;
 	}
-
+       public  double calcularpeso() {
+		double acum=0;
+		for(int i=0; i<piezas.length;i++) {
+			acum+= piezas[i].getPeso();
+		}
+		return acum;
+	}
 	public double getCosto(){
 		return this.costo;
 	}
