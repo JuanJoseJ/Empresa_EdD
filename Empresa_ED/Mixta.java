@@ -7,7 +7,7 @@ public class Mixta extends Pieza{
 		super(peso,codigo);
 		/*double acum=0; sumatoria del precio de la pieza
 		for(int i=0; i<piezas.length;i++) {
-			acum+= piezas[i].getCosto();
+			acum+= piezas[i].getPeso();
 		}
 		this.peso=acum;*/
 		this.piezas=piezas;
