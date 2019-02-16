@@ -40,6 +40,14 @@ public class Cliente{
 		return 0;
 
 	}
-
-
+	public void setEstado_VIP(boolean estado_VIP) {
+		Estado_VIP = estado_VIP;
+	}
+        public void cambiarestadoVIP() {
+	   if(Estado_VIP==true) {
+		   setEstado_VIP(false);
+	   }else {
+		   setEstado_VIP(true);
+	   }
+   }
 }
