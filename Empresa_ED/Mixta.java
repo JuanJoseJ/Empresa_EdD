@@ -7,8 +7,12 @@ public class Mixta extends Pieza{
 		super(peso,codigo);
 	
 	}
-	public double costo() {
-		return 0;
+	public double costo() {  
+		double costofinal= 0;
+		for(int i=0;i<piezas.length;i++) {
+			costofinal+=piezas[i].getCosto();
+		}
+		return costofinal;
 	}
 
 	public double getCosto(){
