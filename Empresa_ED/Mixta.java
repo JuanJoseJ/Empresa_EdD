@@ -14,7 +14,7 @@ public class Mixta extends Pieza{
 		}
 		return costofinal;
 	}
-       public  double calcularpeso() {
+       public  double calcularpeso() { //aplicar este metodo dentro del constructor 
 		double acum=0;
 		for(int i=0; i<piezas.length;i++) {
 			acum+= piezas[i].getPeso();
