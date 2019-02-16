@@ -6,8 +6,8 @@ public class Plastico extends Pieza{
 		super(peso,codigo);
 	}
 
-	public void costo() {
-		this.costo= 1.3*this.peso+30;
+	public double costo() {
+		return 1.3*this.peso+30;
 	}
 
 	public double getCosto(){
