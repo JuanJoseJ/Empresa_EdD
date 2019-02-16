@@ -52,5 +52,6 @@ public class Cliente{
    }
 	public void crearSolicitud(int cantidad, String codigoS, String fecha, Pieza[] piezas) {
 	   Solicitud s= new Solicitud(cantidad,codigoS,fecha,piezas);
+		//while para asignar espcacio en el arreglo
    }
 }
