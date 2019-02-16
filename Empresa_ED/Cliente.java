@@ -9,8 +9,15 @@ public class Cliente{
 	private boolean Estado_VIP;
 	private Solicitud[] solicitudes;
 
-	public Cliente(String codigo){
-		this.codigo=codigo;
+	public Cliente(String codigo, String nombre, String direccion,
+		       String forma_De_Pago,String email) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		Forma_De_Pago = forma_De_Pago;
+		this.email = email;
+		Estado_VIP = false;
+		solicitudes = new Solicitud[0];
 	}
 
 	public  String getCodigo(){
