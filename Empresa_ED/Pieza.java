@@ -15,4 +15,7 @@ abstract class Pieza{
         public double getCosto() {
 		return costo;
 	}
+	public double getPeso() {
+		return peso;
+	}
 }
