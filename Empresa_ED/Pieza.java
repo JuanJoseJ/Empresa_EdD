@@ -12,4 +12,7 @@ abstract class Pieza{
 		this.codigo=codigo;
 		costo= costo();
 	}
+        public double getCosto() {
+		return costo;
+	}
 }
