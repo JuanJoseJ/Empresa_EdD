@@ -7,7 +7,7 @@ public class Mixta extends Pieza{
 		super(peso,codigo);
 	
 	}
-	public void costo() {
+	public double costo() {
 		return 0;
 	}
 
