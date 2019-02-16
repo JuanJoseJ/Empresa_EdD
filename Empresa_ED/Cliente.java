@@ -50,4 +50,7 @@ public class Cliente{
 		   setEstado_VIP(true);
 	   }
    }
+	public void crearSolicitud(int cantidad, String codigoS, String fecha, Pieza[] piezas) {
+	   Solicitud s= new Solicitud(cantidad,codigoS,fecha,piezas);
+   }
 }
