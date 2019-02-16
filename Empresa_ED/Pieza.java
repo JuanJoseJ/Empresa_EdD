@@ -10,5 +10,6 @@ abstract class Pieza{
 	public Pieza(double peso, String codigo){
 		this.peso=peso;
 		this.codigo=codigo;
+		costo= costo();
 	}
 }
