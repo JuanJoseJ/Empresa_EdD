@@ -2,7 +2,7 @@ package Empresa_ED;
 
 public class Mixta extends Pieza{
 	protected Pieza [] piezas; 
-	
+	//se debe aplicar una excepcion
 	public Mixta(double peso, String codigo, Pieza piezas[]){
 		super(peso,codigo);
 		this.piezas=piezas;
