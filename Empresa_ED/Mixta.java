@@ -3,9 +3,9 @@ package Empresa_ED;
 public class Mixta extends Pieza{
 	protected Pieza [] piezas; 
 	
-	public Mixta(double peso, String codigo){
+	public Mixta(double peso, String codigo, Pieza piezas[]){
 		super(peso,codigo);
-	
+		this.piezas=piezas;
 	}
 	public double costo() {  
 		double costofinal= 0;
