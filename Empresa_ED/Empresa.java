@@ -12,14 +12,14 @@ public class Empresa {
 	private String direccion;
 	private Pieza[] piezas;
 	private Cliente[] clientes;
-//	private Solicitud[]	solicitudes;
+	private Solicitud[]	solicitudes;
 
 	public Empresa(String nombre, String direccion) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		piezas = new Pieza[0];
 		clientes = new Cliente[0];
-		//solicitudes= new Solicitud[0];
+		solicitudes= new Solicitud[0];
 	}
 
 	public double Costo_Total() {
@@ -54,7 +54,17 @@ public class Empresa {
 
 	}
 
-	public void crear_solicitud(String nombre_cliente, String codigo_solicitud, double peso, String codigo_pieza, String descripcion) throws EValorNoEncontrado {
+	public void crear_solicitud(String nombre_cliente, String codigo_solicitud, String fecha) throws EValorNoEncontrado {
+		for (int i = 0; i < clientes.length; i++) {
+			if (clientes[i].getNombre() == nombre_cliente) { //busca el cliente
+				clientes[i].Crear_Solicitud(codigo_solicitud,fecha);
+			} else {
+				throw new EValorNoEncontrado();
+			}
+		}
+
+	}
+	public void Agregar_pieza_solicitud(String nombre_cliente, String codigo_solicitud, double peso, String codigo_pieza, String descripcion) throws EValorNoEncontrado {
 		for (int i = 0; i < clientes.length; i++) {
 			if (clientes[i].getNombre() == nombre_cliente) { //busca el cliente
 				clientes[i].Agregar_Pieza_Solicitud(peso, codigo_solicitud, descripcion);
