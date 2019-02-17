@@ -1,8 +1,11 @@
 package Empresa_ED;
-
-
-
 import java.util.Arrays;
+
+class EValorNoEncontrado extends Exception{
+	public EValorNoEncontrado() {
+		super("El valor no pudo ser encontrado");
+	}
+}
 
 public class Empresa {
 	private String nombre;
@@ -11,44 +14,54 @@ public class Empresa {
 	private Cliente[] clientes;
 //	private Solicitud[]	solicitudes;
 
-	public Empresa(String nombre, String direccion){
-		this.nombre=nombre;
-		this.direccion=direccion;
-		piezas= new Pieza[0];
-		clientes= new Cliente[0];
+	public Empresa(String nombre, String direccion) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		piezas = new Pieza[0];
+		clientes = new Cliente[0];
 		//solicitudes= new Solicitud[0];
 	}
 
-	public double Costo_Total(){
+	public double Costo_Total() {
 		double costo_total = 0;
-		for (int i=0;i<piezas.length;i++){
-			costo_total+=piezas[i].getCosto();
+		for (int i = 0; i < piezas.length; i++) {
+			costo_total += piezas[i].getCosto();
 		}
 		return costo_total;
 	}
 
-	public void Crear_Cliente(String codigo, String nombre, String direccion, String forma_De_Pago,String email){
-	if (clientes == null) 
-		clientes= new Cliente [1];
-	else {
-		clientes= Arrays.copyOf(clientes,clientes.length+1);
-	}
-	clientes[clientes.length-1]=new Cliente(codigo, nombre, direccion, forma_De_Pago, email);
-	}
-
-
-	public void Fabricar_Pieza(double peso, String codigo, String descripcion){
-		piezas=Arrays.copyOf(piezas,piezas.length+1 );
-		if(descripcion == "metal" || descripcion=="Metal"){
-			piezas[piezas.length-1]=new Metal(peso,codigo);
-		}else if (descripcion=="plastico" || descripcion=="Plastico"){
-			piezas[piezas.length-1]=new Plastico(peso,codigo);
-		}else if (descripcion=="mixta" || descripcion=="Mixta"){
-			piezas[piezas.length-1]=new Mixta(peso,codigo);
-		}else {System.out.println("La descripcion de la pieza no es valida");} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
-
+	public void Crear_Cliente(String codigo, String nombre, String direccion, String forma_De_Pago, String email) {
+		if (clientes == null)
+			clientes = new Cliente[1];
+		else {
+			clientes = Arrays.copyOf(clientes, clientes.length + 1);
+		}
+		clientes[clientes.length - 1] = new Cliente(codigo, nombre, direccion, forma_De_Pago, email);
 	}
 
-	//public void crear_solicitud()
 
+	public void Fabricar_Pieza(double peso, String codigo, String descripcion) throws EValorNoEncontrado {
+		piezas = Arrays.copyOf(piezas, piezas.length + 1);
+		if (descripcion == "metal" || descripcion == "Metal") {
+			piezas[piezas.length - 1] = new Metal(peso, codigo);
+		} else if (descripcion == "plastico" || descripcion == "Plastico") {
+			piezas[piezas.length - 1] = new Plastico(peso, codigo);
+		} else if (descripcion == "mixta" || descripcion == "Mixta") {
+			piezas[piezas.length - 1] = new Mixta(peso, codigo);
+		} else {
+			throw new EValorNoEncontrado();
+		} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
+
+	}
+
+	public void crear_solicitud(String nombre_cliente, String codigo_solicitud, double peso, String codigo_pieza, String descripcion) throws EValorNoEncontrado {
+		for (int i = 0; i < clientes.length; i++) {
+			if (clientes[i].getNombre() == nombre_cliente) { //busca el cliente
+				clientes[i].Agregar_Pieza_Solicitud(peso, codigo_solicitud, descripcion);
+			} else {
+				throw new EValorNoEncontrado();
+			}
+		}
+
+	}
 }

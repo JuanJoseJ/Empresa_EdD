@@ -1,5 +1,7 @@
 package Empresa_ED;
 
+import jdk.nashorn.internal.runtime.ECMAException;
+
 import java.util.Arrays;
 
 public class Cliente{
@@ -30,24 +32,20 @@ public class Cliente{
 		return solicitudes;
 	}
 
-	/*metodo para crear solicitud, primero compruebo si el arreglo es nulo sino lo es le aumento el tamaño 
-	y le agrego una solicitud*/
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void Crear_Solicitud(int cantidad, String codigoS, String fecha){
+    public void Crear_Solicitud(String codigoS, String fecha){
 		solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
-		solicitudes[solicitudes.length-1]=new Solicitud(cantidad,codigoS,fecha);
+		solicitudes[solicitudes.length-1]=new Solicitud(codigoS,fecha);
 	}
-
-	//el VIP no se ingresa se calcula con el cliente que mas compró
-	public void setEstado_VIP(boolean estado_VIP) {
-		Estado_VIP = estado_VIP;
-	}
-	public void cambiarestadoVIP() {
-		if(Estado_VIP==true) {
-			setEstado_VIP(false);
-		}else {
-			setEstado_VIP(true);
-		}
-	}
+    public void Agregar_Pieza_Solicitud(double peso, String codigo_solicitud, String descripcion) throws EValorNoEncontrado {
+	    for(int i=0;i<solicitudes.length;i++){
+	        if (solicitudes[i].getCodigoS()==codigo_solicitud){
+                solicitudes[i].Agregar_Pieza(peso, codigo_solicitud, descripcion);
+            }else {throw new EValorNoEncontrado();}
+        }
+    }
 
 }
