@@ -36,6 +36,15 @@ public class Empresa {
 	public void Fabricar_Pieza(){
 
 	}
+	/*
+	public void Fabricar_Pieza(){(double peso, String codigo, String descripcion){
+	if (piezas == null) 
+		piezas= new Pieza [1];
+	else {
+		cliente=Arrays.copyOf(piezas, piezas.length+1);
+	}
+	piezas[piezas.length-1]=new Cliente(peso, codigo, descripcion);
+	}*/
 	
 	public double metodoPrueba() {
 		return 0;
