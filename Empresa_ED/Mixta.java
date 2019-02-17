@@ -25,6 +25,9 @@ public class Mixta extends Pieza{
 		}
 		return acum;
 	}
+	public double getCosto() {    // se va a necesitar despues para calcular el costo por solicitud
+		return this.costo;
+	}
 
 	
 	/*
