@@ -4,10 +4,11 @@ public class Mixta extends Pieza{
 
 	protected Pieza [] piezas; 
 	//se debe aplicar una excepcion
-	public Mixta(double peso, String codigo, Pieza piezas[]){
-		super(peso,codigo, codigo);
-		// si descripcion se refiere a que tipo de pieza entonces el constructor deberia ser asi super(peso,codigo,"Mixta")
+	public Mixta(double peso, String codigo){
+		super(peso,codigo, "mixta");
 		this.piezas=piezas;
+		setCosto(0);
+		piezas=new Pieza[0];
 	}
 
 	public void calcular_costo() {

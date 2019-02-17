@@ -17,9 +17,12 @@ public class Empresa {
 		//solicitudes= new Solicitud[0];
 	}
 
-	public int Costo_Total(){
-		return 0;
-
+	public double Costo_Total(){
+		double costo_total = 0;
+		for (int i=0;i<piezas.length;i++){
+			costo_total+=piezas[i].getCosto();
+		}
+		return costo_total;
 	}
 
 	public void Crear_Cliente(String codigo, String nombre, String direccion, String forma_De_Pago,String email){
@@ -31,17 +34,17 @@ public class Empresa {
 	clientes[clientes.length-1]=new Cliente(codigo, nombre, direccion, forma_De_Pago, email);
 	}
 
-	/*
+
 	public void Fabricar_Pieza(double peso, String codigo, String descripcion){
-	if (piezas == null) 
-		piezas= new Pieza [1];
-	else {
 		piezas=Arrays.copyOf(piezas,piezas.length+1 );
+		if(descripcion == "metal" || descripcion=="Metal"){
+			piezas[piezas.length-1]=new Metal(peso,codigo);
+		}else if (descripcion=="plastico" || descripcion=="Plastico"){
+			piezas[piezas.length-1]=new Plastico(peso,codigo);
+		}else if (descripcion=="mixta" || descripcion=="Mixta"){
+			piezas[piezas.length-1]=new Mixta(peso,codigo);
+		}else {System.out.println("La descripcion de la pieza no es valida");} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
+
 	}
-	piezas[piezas.length-1]=new Pieza(peso, codigo, descripcion);
-	}
-	*/
-	public double metodoPrueba() {
-		return 0;
-	}
+
 }
