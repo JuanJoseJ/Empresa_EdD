@@ -5,6 +5,7 @@ public class Mixta extends Pieza{
 	//se debe aplicar una excepcion
 	public Mixta(double peso, String codigo, Pieza piezas[]){
 		super(peso,codigo, codigo);
+		// si descripcion se refiere a que tipo de pieza entonces el constructor deberia ser asi super(peso,codigo,"Mixta")
 		this.piezas=piezas;
 	}
 	
