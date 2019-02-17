@@ -4,6 +4,7 @@ public class Plastico extends Pieza{
 
 	public Plastico(double peso, String codigo){
 		super(peso,codigo, codigo);
+		// si descripcion se refiere a que tipo de pieza entonces el constructor deberia ser asi super(peso,codigo,"Plastico")
 	}
 	
 	public double costo() {
