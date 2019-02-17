@@ -24,13 +24,13 @@ public class Empresa {
 
 	}
 	/*
-	public void Crear_Cliente(){
+	public void Crear_Cliente(String codigo, String nombre, String direccion, String forma_De_Pago,String email){
 	if (clientes == null) 
 		clientes= new Cliente [1];
 	else {
 		cliente=Arrays.copyOf(clientes,clientes.length+1);
 	}
-	clientes[clientes.length-1]=new Cliente(String codigo, String nombre, String direccion, String forma_De_Pago,String email);
+	clientes[clientes.length-1]=new Cliente(codigo, nombre, direccion, forma_De_Pago, email);
 	}*/
 
 	public void Fabricar_Pieza(){
