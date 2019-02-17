@@ -43,7 +43,7 @@ public class Empresa {
 	else {
 		cliente=Arrays.copyOf(piezas, piezas.length+1);
 	}
-	piezas[piezas.length-1]=new Cliente(peso, codigo, descripcion);
+	piezas[piezas.length-1]=new Pieza(peso, codigo, descripcion);
 	}*/
 	
 	public double metodoPrueba() {
