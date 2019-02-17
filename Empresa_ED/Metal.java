@@ -9,4 +9,7 @@ public class Metal extends Pieza{
 	public double costo() {
 		return 2.8*peso+56;
 	}
+	public double getCosto() {    // se va a necesitar despues para calcular el costo por solicitud
+		return this.costo;
+	}
 }
