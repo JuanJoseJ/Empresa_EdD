@@ -5,14 +5,14 @@ public class Empresa {
 	private String direccion;
 	private Pieza[] piezas;
 	private Cliente[] clientes;
-	private Solicitud[]	solicitudes; //este lo pongo, porque en la correccion de los errores, ponen que nos faltan estos :)
+//	private Solicitud[]	solicitudes; //este lo pongo, porque en la correccion de los errores, ponen que nos faltan estos :)
 
 	public Empresa(String nombre, String direccion){
 		this.nombre=nombre;
 		this.direccion=direccion;
 		piezas= new Pieza[0];
 		clientes= new Cliente[0];
-		solicitudes= new Solicitud[0];
+		//solicitudes= new Solicitud[0];
 	}
 
 	public int Costo_Total(){
