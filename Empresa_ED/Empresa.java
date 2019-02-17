@@ -1,5 +1,7 @@
 package Empresa_ED;
 
+
+
 import java.util.Arrays;
 
 public class Empresa {
@@ -46,5 +48,7 @@ public class Empresa {
 		}else {System.out.println("La descripcion de la pieza no es valida");} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
 
 	}
+
+	//public void crear_solicitud()
 
 }

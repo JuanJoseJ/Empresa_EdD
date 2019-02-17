@@ -30,25 +30,14 @@ public class Cliente{
 		return solicitudes;
 	}
 
-	public void setSolicitudes(Solicitud[] solicitudes) {
-		this.solicitudes = solicitudes;
-	}
 	/*metodo para crear solicitud, primero compruebo si el arreglo es nulo sino lo es le aumento el tamaño 
 	y le agrego una solicitud*/
 
-	public void Crear_Solicitud(int cantidad, String codigoS, String fecha, Pieza[] piezas){
-		if (solicitudes==null) 
-			solicitudes= new Solicitud [1];
-		else {
-			solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
-		}
-		solicitudes[solicitudes.length-1]=new Solicitud(cantidad,codigoS,fecha,piezas);
+	public void Crear_Solicitud(int cantidad, String codigoS, String fecha){
+		solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
+		solicitudes[solicitudes.length-1]=new Solicitud(cantidad,codigoS,fecha);
 	}
-	/*
-	public double Costo_Solicitud(){
 
-	}
-	*/
 	//el VIP no se ingresa se calcula con el cliente que mas compró
 	public void setEstado_VIP(boolean estado_VIP) {
 		Estado_VIP = estado_VIP;
@@ -61,9 +50,4 @@ public class Cliente{
 		}
 	}
 
-
-	public void crearSolicitud(int cantidad, String codigoS, String fecha, Pieza[] piezas) {
-		Solicitud s= new Solicitud(cantidad,codigoS,fecha,piezas);
-		//while para asignar espcacio en el arreglo
-	}
 }

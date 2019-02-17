@@ -1,5 +1,7 @@
 package Empresa_ED;
 
+import java.util.Arrays;
+
 public class Mixta extends Pieza{
 
 	protected Pieza [] piezas; 
@@ -21,8 +23,8 @@ public class Mixta extends Pieza{
 	}
 
 	// este metodo es para agregar las partes que componen la pieza mixta al vector de piezas, no se que opinen
-	public void agregar_piezas(double peso, int codigo, String descripcion){
-		piezas=Arrays.copyOf(piezas,piezas.length+1);
+	public void agregar_piezas(double peso, String codigo, String descripcion){
+		piezas= Arrays.copyOf(piezas,piezas.length+1);
 		if(descripcion == "metal" || descripcion=="Metal"){
 			piezas[piezas.length-1]=new Metal(peso,codigo);
 		}else if (descripcion=="plastico" || descripcion=="Plastico"){
