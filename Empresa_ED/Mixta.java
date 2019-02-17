@@ -20,17 +20,18 @@ public class Mixta extends Pieza{
 		setCosto(costofinal);
 	}
 
-	/* Si, esto no es necesario hacerlo... pues, pa que? jajaja
-       public  double calcularpeso() { //aplicar este metodo dentro del constructor //NO ES NECESARIO CALCULAR EL PESO, PUES CREO
-		double acum=0;
-		for(int i=0; i<piezas.length;i++) {
-			acum+= piezas[i].getPeso();
-		}
-		return acum;
+	// este metodo es para agregar las partes que componen la pieza mixta al vector de piezas, no se que opinen
+	public void agregar_piezas(double peso, int codigo, String descripcion){
+		piezas=Arrays.copyOf(piezas,piezas.length+1);
+		if(descripcion == "metal" || descripcion=="Metal"){
+			piezas[piezas.length-1]=new Metal(peso,codigo);
+		}else if (descripcion=="plastico" || descripcion=="Plastico"){
+			piezas[piezas.length-1]=new Plastico(peso,codigo);
+		}else if (descripcion=="mixta" || descripcion=="Mixta"){
+			piezas[piezas.length-1]=new Mixta(peso,codigo);
+		}else {System.out.println("La descripcion de la pieza no es valida");}
 	}
-    /*
 
-	
 	/*
 
 	intento de integrar el metodo
