@@ -58,6 +58,7 @@ public class Mixta extends Pieza{
 		return this.costo;
 	}
 	*/
+
 } 
 
 
