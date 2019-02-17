@@ -44,13 +44,11 @@ public class Cliente{
 		}
 		solicitudes[solicitudes.length-1]=new Solicitud(cantidad,codigoS,fecha,piezas);
 	}
-
+	/*
 	public double Costo_Solicitud(){
-		
-
 
 	}
-	
+	*/
 	//el VIP no se ingresa se calcula con el cliente que mas compró
 	public void setEstado_VIP(boolean estado_VIP) {
 		Estado_VIP = estado_VIP;
