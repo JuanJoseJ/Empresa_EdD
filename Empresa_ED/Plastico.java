@@ -7,8 +7,8 @@ public class Plastico extends Pieza{
 	}
 
 	//Este es el metodo para setear el costo de esta pieza
-	public void calcular_costo() {
-		setCosto(1.3*peso+30);
+	public double calcular_costo() {
+		 return 1.3*peso+30 ;
 	}	
 	
 
