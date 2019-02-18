@@ -39,6 +39,21 @@ public class Cliente{
     public String getNombre() {
         return nombre;
     }
+	 public String getDireccion() {
+		return direccion;
+	}
+
+	public String getForma_De_Pago() {
+		return Forma_De_Pago;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public boolean isEstado_VIP() {
+		return Estado_VIP;
+	}
 
     public void Crear_Solicitud(String codigoS, String fecha){
 		solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
