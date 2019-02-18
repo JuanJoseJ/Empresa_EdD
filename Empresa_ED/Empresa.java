@@ -13,7 +13,7 @@ import java.util.Arrays;
 		pt.setVIP();
 		System.out.println(pt.getClientes()[0].isEstado_VIP());
 	}*/
-/*
+/* Esta a medias
 		Empresa e = new Empresa("nombre", "direccion");
 		e.Crear_Cliente("codigo", "nombre", "direccion", "forma_De_Pago", "email");
 		
