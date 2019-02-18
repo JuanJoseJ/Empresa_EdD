@@ -95,4 +95,8 @@ public class Empresa {
 	public Solicitud[] getSolicitudes() {
 		return solicitudes;
 	}
+	public Cliente[] getClientes() {
+		return clientes;
+	}
+	
 }
