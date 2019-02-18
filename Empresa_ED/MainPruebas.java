@@ -5,25 +5,22 @@ public class MainPruebas {
 	public static void main(String[] args) throws EValorNoEncontrado {
 		// TODO Auto-generated method stub
 
-		Empresa e = new Empresa("Empresota","Calle 10");
+		Empresa e = new Empresa("nombre", "direccion");
+		e.Crear_Cliente("codigo", "nombre", "direccion", "forma_De_Pago", "email");
 		
-		e.Crear_Cliente("12312", "JJ", "Calle 6", "Electronica", "jj@email.com");
-		e.Crear_Cliente("3123", "AA", "Calle 8", "Cheque", "aa@email.com");
-		
-		
-		
-		e.crear_solicitud("JJ", "fjq", "01,01,19");
-		
-		e.crear_solicitud("AA", "uyt", "01,01,19");
-		
-		e.Agregar_Piezas_Solicitud("JJ", "fjq", 32,"qwe", "metal");
-		e.Agregar_Piezas_Solicitud("AA", "uyt", 42, "ewq", "mixta");
-		e.Agregar_Piezas_Solicitud("AA", "uyt", 22, "ftr", "plastico");
-	
 		e.setVIP();
+		e.Crear_Cliente("codigo1", "nombre1", "direccion", "forma_De_Pago", "email");
 		
+		for (int i = 0; i < e.getClientes().length; i++) {
+			if (e.getClientes()[i].isEstado_VIP() == true) {
+				System.out.println(e.getClientes()[i].getNombre());
+			}else {
+				
+			}
+		}
 		
+	}
 		
 	}
 
-}
+
