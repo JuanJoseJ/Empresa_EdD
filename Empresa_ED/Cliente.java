@@ -46,7 +46,7 @@ public class Cliente{
 	}
     public void Agregar_Pieza_Solicitud(double peso, String codigo_solicitud, String descripcion) throws EValorNoEncontrado {
 	    for(int i=0;i<solicitudes.length;i++){
-	        if (solicitudes[i].getCodigoS()==codigo_solicitud){
+	        if (solicitudes[i].getCodigoS().equals(codigo_solicitud)){
                 solicitudes[i].Agregar_Pieza(peso, codigo_solicitud, descripcion);
             }else {throw new EValorNoEncontrado();}
         }

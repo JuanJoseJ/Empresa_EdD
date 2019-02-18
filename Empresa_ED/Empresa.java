@@ -42,11 +42,11 @@ public class Empresa {
 
 	public void Fabricar_Pieza(double peso, String codigo, String descripcion) throws EValorNoEncontrado {
 		piezas = Arrays.copyOf(piezas, piezas.length + 1);
-		if (descripcion == "metal" || descripcion == "Metal") {
+		if (descripcion.equals("metal")  || descripcion.equals("Metal")) {
 			piezas[piezas.length - 1] = new Metal(peso, codigo);
-		} else if (descripcion == "plastico" || descripcion == "Plastico") {
+		} else if (descripcion.equals("plastico" )|| descripcion.equals("Plastico")) {
 			piezas[piezas.length - 1] = new Plastico(peso, codigo);
-		} else if (descripcion == "mixta" || descripcion == "Mixta") {
+		} else if (descripcion.equals("mixta" )|| descripcion.equals("Mixta")) {
 			piezas[piezas.length - 1] = new Mixta(peso, codigo);
 		} else {
 			throw new EValorNoEncontrado();
@@ -56,17 +56,17 @@ public class Empresa {
 
 	public void crear_solicitud(String nombre_cliente, String codigo_solicitud, String fecha) throws EValorNoEncontrado {
 		for (int i = 0; i < clientes.length; i++) {
-			if (clientes[i].getNombre() == nombre_cliente) { //busca el cliente
+			if (clientes[i].getNombre().equals(nombre_cliente)) { //busca el cliente
 				clientes[i].Crear_Solicitud(codigo_solicitud,fecha);
 			} else {
 				throw new EValorNoEncontrado();
-			}
+		}
 		}
 
 	}
 	public void Agregar_Piezas_Solicitud(String nombre_cliente, String codigo_solicitud, double peso, String codigo_pieza, String descripcion) throws EValorNoEncontrado {
 		for (int i = 0; i < clientes.length; i++) {
-			if (clientes[i].getNombre() == nombre_cliente) { //busca el cliente
+			if (clientes[i].getNombre().equals(nombre_cliente)) { //busca el cliente
 				Fabricar_Pieza(peso,codigo_pieza,descripcion);
 			} else {
 				throw new EValorNoEncontrado();

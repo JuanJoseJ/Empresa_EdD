@@ -38,11 +38,11 @@ public class Solicitud{
 	}
 	public void Agregar_Pieza(double peso, String codigo, String descripcion){
 		piezas= Arrays.copyOf(piezas,piezas.length+1 );
-		if(descripcion == "metal" || descripcion=="Metal"){
+		if(descripcion.equals("metal" )|| descripcion.equals("Metal")){
 			piezas[piezas.length-1]=new Metal(peso,codigo);
-		}else if (descripcion=="plastico" || descripcion=="Plastico"){
+		}else if (descripcion.equals("plastico" )|| descripcion.equals("Plastico")){
 			piezas[piezas.length-1]=new Plastico(peso,codigo);
-		}else if (descripcion=="mixta" || descripcion=="Mixta"){
+		}else if (descripcion.equals("mixta" )|| descripcion.equals("Mixta")){
 			piezas[piezas.length-1]=new Mixta(peso,codigo);
 		}else {System.out.println("La descripcion de la pieza no es valida");} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
 
