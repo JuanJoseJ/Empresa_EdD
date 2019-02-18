@@ -13,13 +13,13 @@ public class Mixta extends Pieza{
 		piezas=new Pieza[0];
 	}
 
-	public void calcular_costo() {
+	public double calcular_costo() {
 		double costofinal=0;
 		for(int i=0;i<piezas.length;i++) {
 			piezas[i].calcular_costo();
 			costofinal+=piezas[i].getCosto();
 		}
-		setCosto(costofinal);
+		 return costofinal;
 	}
 
 	// este metodo es para agregar las partes que componen la pieza mixta al vector de piezas, no se que opinen

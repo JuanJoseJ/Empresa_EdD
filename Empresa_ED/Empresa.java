@@ -1,6 +1,18 @@
 package Empresa_ED;
 import java.util.Arrays;
-
+	/*public static void main(String[] args) {
+		Empresa pt= new Empresa("h", "gg");
+		pt.Crear_Cliente("1030", "yo", "casa", "consignacion", "jgacia");
+		try {
+			pt.Fabricar_Pieza(40, "194", "metal");
+		} catch (EValorNoEncontrado e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(pt.getPiezas()[0].getCosto());
+		pt.setVIP();
+		System.out.println(pt.getClientes()[0].isEstado_VIP());
+	}*/
 class EValorNoEncontrado extends Exception{
 	public EValorNoEncontrado() {
 		super("El valor no pudo ser encontrado");
@@ -88,4 +100,15 @@ public class Empresa {
         }
         clientes[posicion_vip].setEstado_VIP(true);
     }
+	public Pieza[] getPiezas() {
+		return piezas;
+	}
+
+	public Solicitud[] getSolicitudes() {
+		return solicitudes;
+	}
+	public Cliente[] getClientes() {
+		return clientes;
+	}
+	
 }

@@ -6,12 +6,13 @@ abstract class Pieza{
 	protected String descripcion;
 	protected  double costo;
 
-	abstract public void calcular_costo();
+	abstract public double calcular_costo();
 
 	public Pieza(double peso, String codigo, String descripcion){
 		this.peso=peso;
 		this.codigo=codigo;
 		this.descripcion=descripcion;
+		this.costo=calcular_costo();
 	}
 	public String getDescripcion() {
 		return descripcion;
