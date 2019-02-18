@@ -6,7 +6,7 @@ public class Metal extends Pieza{
 		super(peso, codigo, "metal");
 	}
 	public double calcular_costo() {
-		 return (2.8*peso+56);
+		 return 2.8*peso+56 ;
 	}
 
 }
