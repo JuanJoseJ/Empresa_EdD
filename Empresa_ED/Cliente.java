@@ -24,6 +24,10 @@ public class Cliente{
 		solicitudes = new Solicitud[0];
 	}
 
+	public void setEstado_VIP(boolean estado_VIP) {
+		Estado_VIP = estado_VIP;
+	}
+
 	public  String getCodigo(){
 		return this.codigo;
 	}
@@ -38,7 +42,7 @@ public class Cliente{
 
     public void Crear_Solicitud(String codigoS, String fecha){
 		solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
-		solicitudes[solicitudes.length-1]=new Solicitud(codigoS,fecha);
+		solicitudes[solicitudes.length-1]=new Solicitud(this.nombre,codigoS,fecha);
 	}
     public void Agregar_Pieza_Solicitud(double peso, String codigo_solicitud, String descripcion) throws EValorNoEncontrado {
 	    for(int i=0;i<solicitudes.length;i++){
@@ -47,5 +51,13 @@ public class Cliente{
             }else {throw new EValorNoEncontrado();}
         }
     }
+
+    public double Calcular_Costo_Solicitude(){
+		double valor_total=0;
+		for (int i=0;i<solicitudes.length;i++){
+			valor_total+=solicitudes[i].Calcular_Precio();
+		}
+		return valor_total;
+	}
 
 }

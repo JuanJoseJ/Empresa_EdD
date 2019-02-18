@@ -3,16 +3,22 @@ package Empresa_ED;
 import java.util.Arrays;
 
 public class Solicitud{
+	private String nombre_cliente;
 	private String codigoS;
 	private String fecha;
 	private Pieza[] piezas; // agrego este atributo porque en la correcion preguntan por la relacion entre la solicitud y las piezas
 	private double precio;
 
-	public Solicitud( String codigoS, String fecha) {
+	public Solicitud( String codigoS, String fecha, String nombre_cliente) {
+		this.nombre_cliente=nombre_cliente;
 		this.codigoS = codigoS; //codigo de la solicitud
 		this.fecha = fecha;
 		this.piezas = new Pieza[0];
 		this.precio=0;
+	}
+
+	public void setNombre_cliente(String nombre_cliente) {
+		this.nombre_cliente = nombre_cliente;
 	}
 
 	public double getPrecio() {
@@ -40,5 +46,12 @@ public class Solicitud{
 			piezas[piezas.length-1]=new Mixta(peso,codigo);
 		}else {System.out.println("La descripcion de la pieza no es valida");} //si la descripcion dada no tiene sentido, el resultado es un texto y no pasa nada jajaja
 
+	}
+	public double Calcular_Precio(){
+		double valor_total=0;
+		for (int i=0;i<piezas.length;i++){
+			valor_total+=piezas[i].getCosto();
+		}
+		return valor_total;
 	}
 }
