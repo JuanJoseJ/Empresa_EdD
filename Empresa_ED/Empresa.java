@@ -88,4 +88,11 @@ public class Empresa {
         }
         clientes[posicion_vip].setEstado_VIP(true);
     }
+	public Pieza[] getPiezas() {
+		return piezas;
+	}
+
+	public Solicitud[] getSolicitudes() {
+		return solicitudes;
+	}
 }
