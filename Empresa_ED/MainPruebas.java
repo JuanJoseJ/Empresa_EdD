@@ -11,6 +11,8 @@ public class MainPruebas {
 		e.setVIP();
 		e.Crear_Cliente("codigo1", "nombre1", "direccion", "forma_De_Pago", "email");
 		
+		
+		System.out.println("blabla");
 		for (int i = 0; i < e.getClientes().length; i++) {
 			if (e.getClientes()[i].isEstado_VIP() == true) {
 				System.out.println(e.getClientes()[i].getNombre());
