@@ -6,11 +6,14 @@ public class Mixta extends Pieza{
 
 	protected Pieza [] piezas; 
 	//se debe aplicar una excepcion
-	public Mixta(double peso, String codigo){
+	public Mixta(double peso, String codigo, Pieza [] ensamble){
 		super(peso,codigo, "mixta");
-		this.piezas=piezas;
+		this.piezas=ensamble;
 		setCosto(0);
-		piezas=new Pieza[0];
+	
+	}
+	public Mixta(double peso, String codigo) {
+		super (peso,codigo,"mixta");
 	}
 
 	public double calcular_costo() {
@@ -29,11 +32,13 @@ public class Mixta extends Pieza{
 			piezas[piezas.length-1]=new Metal(peso,codigo);
 		}else if (descripcion=="plastico" || descripcion=="Plastico"){
 			piezas[piezas.length-1]=new Plastico(peso,codigo);
-		}else if (descripcion=="mixta" || descripcion=="Mixta"){
-			piezas[piezas.length-1]=new Mixta(peso,codigo);
+		
 		}else {System.out.println("La descripcion de la pieza no es valida");}
 	}
-
+	 public void agregar_piezas(double peso, String codigo, String descripcion, Pieza [] ensamble){
+		
+		 piezas[piezas.length-1]=new Plastico(peso,codigo,ensamble);
+	 }
 
 } 
 

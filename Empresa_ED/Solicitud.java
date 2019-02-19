@@ -8,8 +8,9 @@ public class Solicitud{
 	private String fecha;
 	private Pieza[] piezas; // agrego este atributo porque en la correcion preguntan por la relacion entre la solicitud y las piezas
 	private double precio;
+	private int cantidad;
 
-	public Solicitud( String codigoS, String fecha, String nombre_cliente) {
+	public Solicitud( String codigoS, String fecha, String nombre_cliente,int cantidad) {
 		this.nombre_cliente=nombre_cliente;
 		this.codigoS = codigoS; //codigo de la solicitud
 		this.fecha = fecha;
@@ -27,6 +28,15 @@ public class Solicitud{
 
 	public String getCodigoS() {
 		return codigoS;
+	}
+	
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 	public void Calcular_precio(){

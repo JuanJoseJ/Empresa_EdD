@@ -55,10 +55,13 @@ public class Cliente{
 		return Estado_VIP;
 	}
 
-    public void Crear_Solicitud(String codigoS, String fecha){
-		solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
-		solicitudes[solicitudes.length-1]=new Solicitud(this.nombre,codigoS,fecha);
+    public void Crear_Solicitud(String codigoS, String fecha,int cantidad){
+    	if (solicitudes == null)
+    		solicitudes= new Solicitud[1];
+    	else solicitudes=Arrays.copyOf(solicitudes,solicitudes.length+1);
+		solicitudes[solicitudes.length-1]=new Solicitud(this.nombre,codigoS,fecha,cantidad);
 	}
+    
     public void Agregar_Pieza_Solicitud(double peso, String codigo_solicitud, String descripcion) throws EValorNoEncontrado {
 	    for(int i=0;i<solicitudes.length;i++){
 	        if (solicitudes[i].getCodigoS().equals(codigo_solicitud)){
